@@ -5,18 +5,19 @@ try
   process.env.space_id = env.space_id
 catch err
 
+
 axis         = require 'axis'
 rupture      = require 'rupture'
 autoprefixer = require 'autoprefixer-stylus'
 contentful   = require 'roots-contentful'
-config       = require './contentful'
 marked       = require 'marked'
+config       = require './contentful'
 
 
 module.exports =
   ignores: [
     'readme.md', '**/layout.*', '**/_*', '.gitignore', 'contentful.coffee',
-    'Makefile', 'ship*', ""
+    'Makefile', 'ship*', "env.coffee"
   ]
 
   stylus:
