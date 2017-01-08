@@ -9,9 +9,10 @@ module.exports =
     posts:
       id: "post"
       template: "views/_post.jade"
+      write: "data.json"
       path: (entry) -> "blog/#{slug(entry.title)}"
       filters: { 
         "order": "-sys.createdAt"
       }
-      write: "data.json"
+      
 

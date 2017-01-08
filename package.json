@@ -8,7 +8,7 @@
     "jade": "1.9.x",
     "marked": "0.3.x",
     "roots": "3.0.x",
-    "roots-contentful": "0.0.7",
+    "roots-contentful": "0.0.9",
     "rupture": "0.6.x",
     "ship": "0.2.x",
     "slug": "^0.9.1",
