@@ -2,9 +2,10 @@ axis         = require 'axis'
 rupture      = require 'rupture'
 autoprefixer = require 'autoprefixer-stylus'
 contentful   = require 'roots-contentful'
-config       = require './contentful'
 marked       = require 'marked'
-rootAddress  = 'https://www.production.com/';
+config       = require './contentful'
+func         = require './func'
+rootAddress  = 'https://ssalonen.netlify.com/';
 
 
 module.exports =
