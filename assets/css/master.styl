@@ -3,5 +3,111 @@
 normalize-css()
 base()
 
-body
-  padding: 50px
+
+
+p
+  margin: 20px 0px
+    
+a
+  color: blue
+
+header
+  padding: 15px 40px
+  
+header #sitename
+  font-weight: 700
+  font-size:200%
+  color: red
+  
+header #description
+  font-weight: 100
+  font-family: georgia
+  color: grey
+  font-size: 80%
+    
+nav
+  background: blue
+  padding: 0px 40px
+  height:40px
+  
+nav a
+  display: inline-block
+  padding: 0px 15px
+  line-height:40px
+  color: white
+  font-weight:700
+  text-transform: uppercase
+  text-decoration: none
+  text-shadow: 0px 1px 0px black
+  border-right:1px solid #fff
+
+nav a:first-child
+  border-left:1px solid #fff
+  
+nav a:hover
+  text-shadow: 0px 1px 10px black
+  
+footer
+  background: blue
+  margin: 20px 0px 0px 0px
+  padding:20px
+  
+  
+#content
+  padding: 20px 40px
+  max-width: 900px
+  
+#content .lead-image
+  float: right
+  margin: 0px 0px 20px 20px
+  max-width: 100%
+  
+#content .post:after
+  content: " "
+  display: block
+  clear: both
+  
+#content .post .lead-image
+  float: left
+  margin: 0px 20px 20px 00px
+
+  
+.postmeta
+  border-top: 1px solid blue
+  margin: 20px 0px
+  padding: 20px 0px
+  
+.postmeta p
+  margin: 8px 0px
+  
+.postmeta h4.section-title
+  color: blue
+  text-transform: uppercase
+  letter-spacing: 4px
+  font-size:80%
+  
+#share:after
+  content: " "
+  clear: both
+  display: block
+  
+#share .share-button
+  float: left
+  margin-right: 10px
+  
+#author
+  min-height:110px
+  
+#author img.author
+  margin: 0px 20px 0px 0px
+  width:80px
+  float:left
+  
+#published
+  font-family: courier new
+  text-transform: uppercase
+  letter-spacing: 2px
+  color: blue
+  
+#published .updated
+  margin-left: 16px

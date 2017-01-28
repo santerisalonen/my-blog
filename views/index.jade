@@ -1,12 +1,18 @@
 extends layout
 
-block content
-  // Once you've added a content type and posts into Contentful
-  // go update your app.coffee config and then test out iterating
-  // over your content type here!
+block meta
+  title= "home page title"
+  meta(name='description', content='description of your site')
+  meta(name='author', content= "author of the site")
 
-  ul
-    - for post in contentful.posts
-      li
-        h4: a(href= post._url)= post.title
-        != marked(post.text)
+
+block content
+  - for post in contentful.posts
+    div.post
+      if post.leadImage
+        img(class="lead-image" src!= asset(post.leadImage, {w: 200 }))
+      h2: a(href= post._url)= post.title
+      p= post.metaDescription
+      
+          
+

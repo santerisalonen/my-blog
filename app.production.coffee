@@ -4,6 +4,8 @@ autoprefixer = require 'autoprefixer-stylus'
 contentful   = require 'roots-contentful'
 config       = require './contentful'
 marked       = require 'marked'
+rootAddress  = 'https://www.production.com/';
+
 
 module.exports =
   ignores: [
@@ -16,6 +18,8 @@ module.exports =
 
   locals:
     marked: marked
+    func: func
+    rootAddress: rootAddress
 
   extensions: [contentful(config)]
   

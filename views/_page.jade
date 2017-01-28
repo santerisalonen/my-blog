@@ -1,0 +1,15 @@
+extends layout
+
+
+block meta
+  title= entry.title
+  meta(name='description', content='description of your site')
+  meta(name='author', content= "author of the site")
+  
+block content
+  h2#title= entry.title
+        
+  div#entry
+    != marked(entry.text)
+  
+  

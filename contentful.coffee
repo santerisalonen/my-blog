@@ -1,4 +1,4 @@
-slug         = require 'slug'
+slug = require 'slug'
 slug.defaults.modes['pretty']['lower'] = true 
 
 module.exports = 
@@ -9,10 +9,16 @@ module.exports =
     posts:
       id: "post"
       template: "views/_post.jade"
-      write: "data.json"
+      write: "posts.json"
       path: (entry) -> "blog/#{slug(entry.title)}"
       filters: { 
         "order": "-sys.createdAt"
       }
+    pages:
+      id: "page"
+      template: "views/_page.jade"
+      write: "pages.json"
+      path: (entry) -> "page/#{slug(entry.name)}"
+      
       
 
