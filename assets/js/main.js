@@ -3,7 +3,8 @@ $(function() {
     var platform = $(this).data('platform');
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
-      event : 'socialShare',
+      event : 'social',
+      action : 'share',
       platform : platform
     });
   });
