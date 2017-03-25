@@ -3,6 +3,7 @@ try
   env = require './env' 
   process.env.access_token = env.access_token
   process.env.space_id = env.space_id
+  process.env.CONTENTFUL_ENV = 'develop'
 catch err
 
 

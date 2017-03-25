@@ -3,20 +3,26 @@
 normalize-css()
 base()
 
-
-
 p
   margin: 20px 0px
     
 a
   color: blue
 
+  
+ul li
+  margin-top: 10px
+  
 header
   padding: 15px 40px
   
+  @media screen and (max-width: 500px)
+    padding: 15px 20px
+  
 header #sitename
   font-weight: 700
-  font-size:200%
+  font-size:160%
+  font-family: lucidia-grande
   color: red
   
 header #description
@@ -28,7 +34,11 @@ header #description
 nav
   background: blue
   padding: 0px 40px
+  margin-bottom:40px
   height:40px
+  
+  @media screen and (max-width: 500px)
+    padding: 0px 20px
   
 nav a
   display: inline-block
@@ -51,16 +61,30 @@ footer
   background: blue
   margin: 20px 0px 0px 0px
   padding:20px
-  
-  
+
 #content
-  padding: 20px 40px
-  max-width: 900px
+  padding: 0px 40px
+  max-width: 800px
   
-#content .lead-image
-  float: right
-  margin: 0px 0px 20px 20px
-  max-width: 100%
+  @media screen and (max-width: 500px)
+    padding: 0px 20px
+  
+/* home posts */
+
+#content .post
+  margin-bottom: 40px
+  
+  @media screen and (max-width: 800px)
+    border-bottom: 1px solid blue
+  @media screen and (max-width: 500px)
+    margin-bottom: 20px
+    
+    
+    
+#content .post h2  
+  @media screen and (max-width: 500px)
+    margin: 0px 8px -10px 0px
+    background: #fff
   
 #content .post:after
   content: " "
@@ -69,9 +93,44 @@ footer
   
 #content .post .lead-image
   float: left
-  margin: 0px 20px 20px 00px
-
+  margin: 0px 20px 10px 0px
   
+  @media screen and (max-width: 500px)
+    float:none
+    margin: 0px 0px 5px 0px
+
+/* single post */
+
+#posttop
+  min-height: 40px
+  font-family: courier new
+  
+#posttop img.author
+  float:left
+  height: 40px
+  margin: -10px 10px 0px 0px
+  border-radius: 50px
+  
+#postbody
+  padding-bottom: 1px
+  
+#postbody img
+  max-width: 100%
+  
+#postbody .lead-image
+  float: right
+  margin: 0px 0px 20px 20px
+  max-width: 100%
+  
+  @media screen and (max-width: 700px)
+    float:none
+    margin:0px 0px 10px 0px
+  
+  
+#postbody p, #postbody li
+  line-height: 140%
+  
+
 .postmeta
   border-top: 1px solid blue
   margin: 20px 0px
@@ -92,16 +151,18 @@ footer
   display: block
   
 #share .share-button
-  float: left
   margin-right: 10px
+  font-weight: 700
   
 #author
   min-height:110px
   
 #author img.author
-  margin: 0px 20px 0px 0px
-  width:80px
+  margin: 0px 20px 40px 0px
   float:left
+  
+  @media screen and (max-width: 500px)
+    max-width:80px
   
 #published
   font-family: courier new

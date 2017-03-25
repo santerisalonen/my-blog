@@ -1,47 +1,52 @@
 extends layout
 
 
+  
 block meta
   title= entry.title
   meta(name='description', content='description of your site')
   meta(name='author', content= "Santeri Salonen")
   meta(property= 'og:title', content= entry.title)
-  meta(property='og:image', content!= asset(entry.leadImage))
+  if (entry.leadImage)
+    meta(property='og:image', content= asset(entry.leadImage))
   meta(property='og:description', content= entry.metaDescription)
   meta(property='og:url', content= rootAddress + entry._url)
   
 block content
 
   h1#title= entry.title
-  div#post
-    if entry.leadImage
+  div#posttop
+    img.author(src= "/img/santeri-salonen-w120.jpg", alt="Santeri Salonen")
+    p by <span rel="author">Santeri Salonen</span>
+
+  div#postbody
+    if (entry.leadImage && !entry.hideLeadImage)
       img(class="lead-image" src!= asset(entry.leadImage, {w: 400 }))
 
     != marked(entry.text)
 
   div.postmeta#share
     h4.section-title If you wish to share...
-    p        
-      // linkedin
-      div.share-button
-        script(src= "//platform.linkedin.com/in.js", type="text/javascript")= "lang: en_US"
-        script(type= "IN/Share", data-url= rootAddress + entry._url, data-onsuccess="trackShare('linkedin')")
-
-      // twitter
-      div.share-button
-        a(href= "https://twitter.com/share", class= "twitter-share-button", data-via= "ssalonen", data-show-count= "false")= "Tweet"    
+   
+    // linkedin    
+    a.share-button(data-platform= "linkedin" target= "top", href= "https://www.linkedin.com/shareArticle?mini=true&url=" + rootAddress + entry._url + "&title=" + entry.title + "&summary=" + entry.metaDescription)= "Linkedin"
       
-      // facebook
-      div.share-button
-        div.fb-share-button(data-href= rootAddress + entry._url, data-layout= "button", data-size= "small", data-mobile-iframe= "true")
-          a.fb-xfbml-parse-ignore(target= "_blank", href= "https://www.facebook.com/sharer/sharer.php?u=" + rootAddress + entry._url + ";src=sdkpreparse")= "Share"
-          
+    // twitter
+    a.share-button(data-platform= "twitter" target= "top", href= 'http://twitter.com/share?url=' + rootAddress + entry._url + '&text=' + entry.title +'&via=ssalonen')= "Twitter"
+     
+    // facebook
+    a.share-button(data-platform= "facebook" target= "top", href= "https://www.facebook.com/sharer/sharer.php?u=" + rootAddress + entry._url)= "Facebook"
+        
+        
   div.postmeta#author
     h4.section-title About the author
-    img.author(src= "/img/santeri-salonen.jpg", alt="Santeri Salonen")
+    img.author(src= "/img/santeri-salonen-w120.jpg", alt="Santeri Salonen")
     strong Santeri Salonen
     p
       a(href='https://www.twitter.com/ssalonen')= "@ssalonen on Twitter" 
+    p
+      a(href='https://www.linkedin.com/in/santerisalonen/')= "On Linkedin" 
+    div.break
     p
       a(href='/page/about.html')= "Read more about this blog."
       

@@ -1,22 +1,28 @@
 doctype html
 
-html
+- lang = 'en'
+if(entry && entry.language)
+  - lang = entry.language
+    
+html(lang= lang)
   head
     meta(charset='utf8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
+    meta(name= "viewport", content="width=device-width, initial-scale=1")
     link(rel='stylesheet', href='/css/master.css')
+    script(src= "https://code.jquery.com/jquery-3.1.1.slim.min.js", integrity= "sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="   crossorigin= "anonymous")
     script(src= rootAddress + '/js/main.js')
+
     block meta
     script.
-      window.dataLayer = window.dataLayer || []
-    
+      window.dataLayer = window.dataLayer || [];
+
   body
-    div#fb-root
     header
-      div#sitename @ssalonen
-      div#description Analytics of empowerment & more
+      div#sitename  @ssalonen
+      div#description Emergent Analytics & more
     nav
-      a(href= "/")= "Blog"
+      a(href= "/")= "Posts"
       - for page in contentful.pages
         a(href= page._url)= page.name
     
