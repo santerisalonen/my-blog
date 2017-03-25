@@ -29,13 +29,13 @@ block content
     h4.section-title If you wish to share...
    
     // linkedin    
-    a.share-button(data-platform= "linkedin" target= "_top", href= "https://www.linkedin.com/shareArticle?mini=true&url=" + rootAddress + entry._url + "&title=" + entry.title + "&summary=" + entry.metaDescription)= "Linkedin"
+    a.share-button(data-platform= "linkedin" target= "_blank", href= "https://www.linkedin.com/shareArticle?mini=true&url=" + rootAddress + entry._url + "&title=" + entry.title + "&summary=" + entry.metaDescription)= "Linkedin"
       
     // twitter
-    a.share-button(data-platform= "twitter" target= "_top", href= 'http://twitter.com/share?url=' + rootAddress + entry._url + '&text=' + entry.title +'&via=ssalonen')= "Twitter"
+    a.share-button(data-platform= "twitter" target= "_blank", href= 'http://twitter.com/share?url=' + rootAddress + entry._url + '&text=' + entry.title +'&via=ssalonen')= "Twitter"
      
     // facebook
-    a.share-button(data-platform= "facebook" target= "_top", href= "https://www.facebook.com/sharer/sharer.php?u=" + rootAddress + entry._url)= "Facebook"
+    a.share-button(data-platform= "facebook" target= "_blank", href= "https://www.facebook.com/sharer/sharer.php?u=" + rootAddress + entry._url)= "Facebook"
         
         
   div.postmeta#author
